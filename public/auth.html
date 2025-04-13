@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MojitoTranslate - 身份验证</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>MojitoTranslate</h1>
+      </div>
+    </header>
+
+    <main>
+      <div class="auth-container">
+        <h2>扩展授权</h2>
+        <p>登录以授权MojitoTranslate扩展程序使用您的账号</p>
+        
+        <div id="loginForm">
+          <button id="googleLoginBtn" class="btn btn-primary">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+            使用Google账号登录
+          </button>
+        </div>
+        
+        <div id="userInfo" style="display: none;">
+          <div class="user-profile">
+            <img id="userAvatar" alt="用户头像" class="avatar">
+            <h3 id="userName">用户名</h3>
+            <p id="userEmail">邮箱</p>
+          </div>
+          <div class="auth-success">
+            <p>您已成功登录!</p>
+            <div id="extensionStatus">
+              <p id="statusMessage">正在与扩展通信...</p>
+              <div class="spinner" id="spinner"></div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="logoutBtn" class="btn btn-secondary">登出</button>
+            <button id="manualReturnBtn" class="btn btn-primary" style="display: none;">手动返回扩展</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 MojitoTranslate. 保留所有权利。</p>
+    </footer>
+  </div>
+
+  <script src="js/extension-auth.js"></script>
+</body>
+</html> 
